@@ -11,6 +11,7 @@ public class BnwthListener extends Thread{
     public void run(){
         do{
             StrawClient.bandwidth = scan.nextLine();
+            System.out.println(StrawClient.bandwidth);
         }while(!(StrawClient.bandwidth.equals("EXIT")));
     }
 }

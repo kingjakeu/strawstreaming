@@ -78,6 +78,16 @@ public class AudioDownloader {
             e.printStackTrace();
         }
     }
+    public void sendMsg(BufferedReader br,PrintWriter pw){
+        try{
+            String tempMsg = br.readLine();
+            //send msg
+            pw.println(tempMsg);
+            pw.flush();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     public void downloadAudioFile(String dirName,String slaveID) {
         try {
             String msg ="";
@@ -103,7 +113,7 @@ public class AudioDownloader {
                 if(count >-1){
                     fos.write(buffer,0,count);
                 }
-                //System.out.println(slaveID+" "+i+" "+count);
+                System.out.println(slaveID+" "+i+" "+count);
                 /*
                 if(i<endSQN){
                     fileName = dirName+(i+1)+".mp3";

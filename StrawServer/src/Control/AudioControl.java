@@ -44,6 +44,20 @@ public class AudioControl {
         String[] temp = msg.split(",");
         return Integer.parseInt(temp[1]);
     }
+    public boolean sendMsg(BufferedReader br,PrintWriter pw, String msg){
+        //send msg
+        pw.println(msg);
+        pw.flush();
+        try{
+            String tempMsg = br.readLine();
+            if(msg.equals(tempMsg)){
+                return true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
     //send audio file(par: path of audio file)
     public void sendAudioFile(String filePath,String seq){
         try{

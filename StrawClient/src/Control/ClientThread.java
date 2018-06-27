@@ -11,6 +11,8 @@ public class ClientThread extends Thread {
 
             //socket
             sock = new Socket("127.0.0.1",1234);
+
+            //sock = new Socket("172.16.17.22",1234);
             // In & out streams.
             OutputStream out = sock.getOutputStream();
             InputStream in = sock.getInputStream();

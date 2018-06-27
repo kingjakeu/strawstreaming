@@ -13,7 +13,7 @@ public class StrawBroker {
     public static void main(String[] args){
 
         try {
-            // start server to broker first
+            // start server&slave to broker first
             ServerBrokerThread sbt = new ServerBrokerThread();
             sbt.start();
 
